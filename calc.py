@@ -5,3 +5,9 @@ def initializeWindow():
 
     root.geometry('600x600')
     root.title('Calc')
+    return root
+
+if __name__ == '__main__':
+
+    root.initializeWindow()
+    root.mainloop()
