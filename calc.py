@@ -8,16 +8,16 @@ def initializeWindow():
     return root
 
 def initializeScreen(root):
-    screen = [tk.Label(root, width = 60, bg = '#545454' ) for i in range(3)]
+    screen = [tk.Label(root, width = 40, bg = '#545454', text = 'test', anchor = 'w', borderwidth = 3 ) for i in range(3)]
 
-    for i in range(len(scren)):
-        screen[i].grid(row - 1, column = 0)
+    for i in range(len(screen)):
+        screen[i].grid(row = i, column = 0, ipadx = 10, ipady = 10)
     return screen
 
 if __name__ == '__main__':
 
     root = initializeWindow()
-    screen = initializeScreen()
+    screen = initializeScreen(root)
 
     root.mainloop()
 
