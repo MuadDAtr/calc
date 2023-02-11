@@ -14,6 +14,11 @@ def initializeScreen(root):
         screen[i].grid(row = i, column = 0, ipadx = 10, ipady = 10)
     return screen
 
+def initializeData(root, screen):
+    data_field = tk.Entry(root)
+    data_field.grid(row = len(screen)+1)
+
+
 if __name__ == '__main__':
 
     root = initializeWindow()
