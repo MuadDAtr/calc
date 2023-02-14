@@ -8,7 +8,7 @@ def initializeWindow():
     return root
 
 def initializeScreen(root):
-    screen = [tk.Label(root, width = 40, bg = '#545454', text = 'test', anchor = 'w', borderwidth = 3 ) for i in range(3)]
+    screen = [tk.Label(root, width = 60, bg = '#545454', text = 'test', anchor = 'center', borderwidth = 3 ) for i in range(3)]
 
     for i in range(len(screen)):
         screen[i].grid(row = i, column = 0, ipadx = 10, ipady = 10)
@@ -16,7 +16,10 @@ def initializeScreen(root):
 
 def initializeDataField(root, screen):
     data_field = tk.Entry(root)
-    data_field.grid(row = len(screen), column = 0)
+    data_field.grid(row = len(screen), column = 0, ipadx = 100, ipady = 5)
+
+    info = tk.Label(root, width = 60, bg = 'green', text = 'info', anchor = 'center', borderwidth = 2)
+    info.grid(row = len(screen) + 1, column = 0, ipady = 15, ipadx = 1)
 
     return data_field
 
