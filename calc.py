@@ -29,14 +29,21 @@ def initializeDataField(root, screen):
     return data_field
 
 def initializeButtons(root, screen):
-
-
+    button = [tk.Button(root, text = symb) for symb in symbols]
+    j = len(screen)+2
+    for i in range(len(button)):
+        if i%5 == 0:
+            j+=1
+        button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
+    return button
 
 if __name__ == '__main__':
 
     root = initializeWindow()
     screen = initializeScreen(root)
     data_field = initializeDataField(root, screen)
+    initializeButtons(root, screen)
+
 
     root.mainloop()
 
