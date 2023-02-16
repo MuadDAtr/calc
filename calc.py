@@ -40,7 +40,10 @@ def initializeButtons(root, screen):
 
 def click(data_field, symbol):
     def click_1():
-        data_field.insert(tk.END, symbol)
+        if symbol == 'C':
+            data_field.delete(0, tk.END)
+        else:
+            data_field.insert(tk.END, symbol)
 
     return click_1
 
