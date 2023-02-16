@@ -35,7 +35,11 @@ def initializeButtons(root, screen):
         if i%5 == 0:
             j+=1
         button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
+        button[i].configure(command)
     return button
+
+def click(data_field, symbol):
+
 
 if __name__ == '__main__':
 
