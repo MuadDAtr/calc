@@ -35,10 +35,14 @@ def initializeButtons(root, screen):
         if i%5 == 0:
             j+=1
         button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
-        button[i].configure(command)
+        button[i].configure(command = click(data_field, button[i]['text']))
     return button
 
 def click(data_field, symbol):
+    def click_1():
+        data_field.insert(tk.END, symbol)
+
+    return click_1
 
 
 if __name__ == '__main__':
