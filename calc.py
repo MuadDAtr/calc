@@ -26,9 +26,9 @@ def initializeDataField(root, screen):
     info = tk.Label(root, width = 60, bg = 'green', text = 'info', anchor = 'center', borderwidth = 2)
     info.grid(row = len(screen) + 1, columnspan = 5, ipady = 15, ipadx = 1)
 
-    return data_field
+    return data_field, info
 
-def initializeButtons(root, screen):
+def initializeButtons(root, screen, info):
     button = [tk.Button(root, text = symb) for symb in symbols]
     j = len(screen)+2
     for i in range(len(button)):
@@ -37,7 +37,7 @@ def initializeButtons(root, screen):
         button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
         button[i].configure(command = click(data_field, button[i]['text']))
 
-    eq_sign = tk.Button
+    eq_sign = tk.Button(root, text = '=', bg = 'green', command = equation(data_field, screen, info))
     return button
 
 def click(data_field, symbol):
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     root = initializeWindow()
     screen = initializeScreen(root)
     data_field = initializeDataField(root, screen)
-    initializeButtons(root, screen)
+    initializeButtons(root, screen, info)
 
 
     root.mainloop()
