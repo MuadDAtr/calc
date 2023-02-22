@@ -36,6 +36,8 @@ def initializeButtons(root, screen):
             j+=1
         button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
         button[i].configure(command = click(data_field, button[i]['text']))
+
+    eq_sign = tk.Button
     return button
 
 def click(data_field, symbol):
@@ -46,6 +48,12 @@ def click(data_field, symbol):
             data_field.insert(tk.END, symbol)
 
     return click_1
+
+def equation(data_field, screen, info):
+    def func():
+        pass
+    return func
+
 
 
 if __name__ == '__main__':
