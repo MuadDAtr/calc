@@ -3,7 +3,7 @@ import tkinter as tk
 symbols = ['7','8','9', '/', 'C', 
             '4', '5', '6', '*', '(',
             '1', '2', '3', '+', ')',
-            ',', '0', '%', '-', '=']
+            ',', '0', '%', '-']
 
 def initializeWindow():
     root = tk.Tk()
@@ -38,6 +38,7 @@ def initializeButtons(root, screen, info):
         button[i].configure(command = click(data_field, button[i]['text']))
 
     eq_sign = tk.Button(root, text = '=', bg = 'green', command = equation(data_field, screen, info))
+    eq_sign.grid(row = len(screen)+ 6, column = 4)
     return button
 
 def click(data_field, symbol):
