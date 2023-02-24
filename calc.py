@@ -13,7 +13,7 @@ def initializeWindow():
     return root
 
 def initializeScreen(root):
-    screen = [tk.Label(root, width = 60, bg = '#545454', text = 'test', anchor = 'center', borderwidth = 3 ) for i in range(3)]
+    screen = [tk.Label(root, width = 60, bg = '#545454', text = 'text', anchor = 'center', borderwidth = 3 ) for i in range(3)]
 
     for i in range(len(screen)):
         screen[i].grid(row = i, columnspan = 5, ipadx = 10, ipady = 10)
@@ -51,7 +51,11 @@ def click(data_field, symbol):
 
 def equation(data_field, screen, info):
     def func():
-        pass
+        text = data_field.get()
+        for i in range(1, len(screen)):
+            if screen[i]['text']:
+                screen[i - 1]['text'] = screen[i]['text']
+        screen[-1]['text'] = text
     return func
 
 
@@ -60,7 +64,7 @@ if __name__ == '__main__':
 
     root = initializeWindow()
     screen = initializeScreen(root)
-    data_field = initializeDataField(root, screen)
+    data_field, info = initializeDataField(root, screen)
     initializeButtons(root, screen, info)
 
 
