@@ -56,7 +56,9 @@ def equation(data_field, screen, info):
         for i in range(1, len(screen)):
             if screen[i]['text']:
                 screen[i - 1]['text'] = screen[i]['text']
-        screen[-1]['text'] = text
+        screen[-1]['text'] = text + " = " + str(eval())
+
+
     return func
 
 
