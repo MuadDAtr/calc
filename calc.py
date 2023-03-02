@@ -51,12 +51,19 @@ def click(data_field, symbol):
     return click_1
 
 def equation(data_field, screen, info):
+    def sign_correct():
+        
+
     def func():
         text = data_field.get()
-        for i in range(1, len(screen)):
-            if screen[i]['text']:
-                screen[i - 1]['text'] = screen[i]['text']
-        screen[-1]['text'] = text + " = " + str(eval())
+        if not sign_correct(text):
+            info['text'] = ['Error']
+        else:
+
+            for i in range(1, len(screen)):
+                if screen[i]['text']:
+                    screen[i - 1]['text'] = screen[i]['text']
+            screen[-1]['text'] = text + " = " + str(eval(text))
 
 
     return func
