@@ -71,6 +71,7 @@ def equation(data_field, screen, info):
             screen[-1]['text'] = text + " = " + str(eval(text))
             info['bg'] = ['green']
             info['text'] = ['info']
+            data_field.delete(0, tk.END)
 
     return func
 
