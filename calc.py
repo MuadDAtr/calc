@@ -57,6 +57,12 @@ def equation(data_field, screen, info):
         while text[i] == ')':
             i += 1
         return text[-i].isdigit()
+    
+    def operators_correct(text):
+        for i in range(len(text)):
+            if not text[i].isdigit() and not text[i+1].isdigit()
+                return True
+        return False
 
     def func():
         text = data_field.get()
