@@ -60,13 +60,13 @@ def equation(data_field, screen, info):
     
     def operators_correct(text):
         for i in range(len(text)):
-            if not text[i].isdigit() and not text[i+1].isdigit()
+            if not text[i].isdigit() and not text[i+1].isdigit():
                 return True
         return False
 
     def func():
         text = data_field.get()
-        if not sign_correct(text):
+        if not sign_correct(text) or operators_correct(text):
             info['text'] = ['Error !!']
             info['bg'] = ['red']
         else:
