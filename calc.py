@@ -34,11 +34,11 @@ def initializeButtons(root, screen, info):
     for i in range(len(button)):
         if i%5 == 0:
             j+=1
-        button[i].grid(row = j, column = i % 5, ipadx = 5, ipady = 5)
+        button[i].grid(row = j, column = i % 5, ipadx = 20, ipady = 5)
         button[i].configure(command = click(data_field, button[i]['text']))
 
-    eq_sign = tk.Button(root, text = '=', bg = 'green', command = equation(data_field, screen, info))
-    eq_sign.grid(row = len(screen)+ 6, column = 4)
+    eq_sign = tk.Button(root, text = '=', bg = 'green', command = equation(data_field, screen, info) )
+    eq_sign.grid(row = len(screen)+ 6, column = 4, ipadx = 25, ipady = 10)
     return button
 
 def click(data_field, symbol):
